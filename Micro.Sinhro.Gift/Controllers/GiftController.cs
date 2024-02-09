@@ -89,7 +89,7 @@ namespace Micro.Sinhro.REST.Gift.Controllers
             {
                 return BadRequest(result);
             }
-           // broker.Publish(gift);
+            broker.Publish(gift);
             return Ok(result);
         }
     }

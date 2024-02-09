@@ -26,7 +26,7 @@ namespace Micro.Sinhro.REST.ApiGateway.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var response = httpClient.GetAsync(url.UserGift + "/usercars").Result;
+            var response = httpClient.GetAsync(url.UserGift + "/usergift").Result;
             response.EnsureSuccessStatusCode();
 
             var content = response.Content.ReadAsStringAsync().Result;
