@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Micro.Sinhro.REST.APIGateway.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
     {
