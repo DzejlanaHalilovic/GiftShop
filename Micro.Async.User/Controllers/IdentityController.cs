@@ -47,7 +47,6 @@ namespace Micro.Async.User.Controllers
             {
                 return BadRequest(response);
             }
-            _broker.Consume();
             return Ok(response);
         }
 

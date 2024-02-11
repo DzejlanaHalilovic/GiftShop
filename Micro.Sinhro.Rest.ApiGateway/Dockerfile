@@ -8,4 +8,4 @@ RUN dotnet publish -c Release -o /app
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 COPY --from=build /app .
-ENTRYPOINT ["dotnet", "Micro.Sinhro.Rest.ApiGateway"]
+ENTRYPOINT ["dotnet", "Micro.Sinhro.Rest.ApiGateway.dll"]

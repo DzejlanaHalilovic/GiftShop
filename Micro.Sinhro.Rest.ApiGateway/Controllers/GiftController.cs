@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace Micro.Sinhro.REST.APIGateway.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class GiftController : ControllerBase
     {

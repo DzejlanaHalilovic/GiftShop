@@ -25,6 +25,8 @@ namespace Micro.Async.User.Controllers
         {
             var users = await _userService.getUsersAsync();
             //_messageBroker.Publish(users);
+            _messageBroker.Consume();
+
             return Ok(users);
         }
 
