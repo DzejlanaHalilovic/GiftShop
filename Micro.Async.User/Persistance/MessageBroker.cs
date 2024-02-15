@@ -24,7 +24,7 @@ namespace Micro.Async.User.Persistance
             };
             var connection = factory.CreateConnection();
             using var channel = connection.CreateModel();
-            channel.QueueDeclare(queue: "grades", durable: false, exclusive: false,
+            channel.QueueDeclare(queue: "gift", durable: false, exclusive: false,
                 autoDelete: false, arguments: null);
 
             var consumer = new EventingBasicConsumer(channel);
@@ -35,7 +35,7 @@ namespace Micro.Async.User.Persistance
                 result = Encoding.UTF8.GetString(body);
                 logger.LogInformation($"{result}");
             };
-            channel.BasicConsume(queue: "grades", autoAck: true, consumer: consumer);
+            channel.BasicConsume(queue: "gift", autoAck: true, consumer: consumer);
 
             return result;
         }

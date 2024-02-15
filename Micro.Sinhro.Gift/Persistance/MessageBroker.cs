@@ -19,10 +19,10 @@ namespace Micro.Sinhro.Gift.Persistance
                 };
                 var connection = factory.CreateConnection();
                 using var channel = connection.CreateModel();
-                channel.QueueDeclare(queue: "grades", durable: false, exclusive: false,
+                channel.QueueDeclare(queue: "gift", durable: false, exclusive: false,
                     autoDelete: false, arguments: null);
                 var body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message));
-                channel.BasicPublish("", "grades", body: body);
+                channel.BasicPublish("", "gift", body: body);
             }
         
     }

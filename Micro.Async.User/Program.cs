@@ -105,7 +105,7 @@ var factory = new ConnectionFactory()
 };
 var connection = factory.CreateConnection();
 using var channel = connection.CreateModel();
-channel.QueueDeclare(queue: "grades", durable: false, exclusive: false,
+channel.QueueDeclare(queue: "gift", durable: false, exclusive: false,
     autoDelete: false, arguments: null);
 
 var consumer = new EventingBasicConsumer(channel);
@@ -116,7 +116,7 @@ consumer.Received += (sender, args) =>
     result = Encoding.UTF8.GetString(body);
     Console.WriteLine($"{result}");
 };
-channel.BasicConsume(queue: "grades", autoAck: true, consumer: consumer);
+channel.BasicConsume(queue: "gift", autoAck: true, consumer: consumer);
 
 
 app.Run();

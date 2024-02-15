@@ -24,8 +24,7 @@ namespace Micro.Async.User.Controllers
         public async Task<IActionResult> GetAll()
         {
             var users = await _userService.getUsersAsync();
-            //_messageBroker.Publish(users);
-            _messageBroker.Consume();
+        
 
             return Ok(users);
         }
