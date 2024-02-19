@@ -40,7 +40,9 @@ namespace Micro.Sinhro.REST.APIGateway.Controllers
             response.EnsureSuccessStatusCode();
 
             var content = response.Content.ReadAsStringAsync().Result;
-            var user = JsonConvert.DeserializeObject<User>(content);
+            var responseObject = JsonConvert.DeserializeObject<dynamic>(content);
+            var user = JsonConvert.DeserializeObject<User>(responseObject.user.ToString());
+
             return Ok(user);
         }
 

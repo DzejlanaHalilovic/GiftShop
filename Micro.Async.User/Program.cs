@@ -103,20 +103,20 @@ var factory = new ConnectionFactory()
     UserName = "guest",
     Password = "guest"
 };
-var connection = factory.CreateConnection();
-using var channel = connection.CreateModel();
-channel.QueueDeclare(queue: "gift", durable: false, exclusive: false,
-    autoDelete: false, arguments: null);
+//var connection = factory.CreateConnection();
+//using var channel = connection.CreateModel();
+//channel.QueueDeclare(queue: "gift", durable: false, exclusive: false,
+//    autoDelete: false, arguments: null);
 
-var consumer = new EventingBasicConsumer(channel);
-var result = "";
-consumer.Received += (sender, args) =>
-{
-    var body = args.Body.ToArray();
-    result = Encoding.UTF8.GetString(body);
-    Console.WriteLine($"{result}");
-};
-channel.BasicConsume(queue: "gift", autoAck: true, consumer: consumer);
+//var consumer = new EventingBasicConsumer(channel);
+//var result = "";
+//consumer.Received += (sender, args) =>
+//{
+//    var body = args.Body.ToArray();
+//    result = Encoding.UTF8.GetString(body);
+//    Console.WriteLine($"{result}");
+//};
+//channel.BasicConsume(queue: "gift", autoAck: true, consumer: consumer);
 
 
 app.Run();
